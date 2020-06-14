@@ -1,27 +1,15 @@
-# AngularCleanArchitecture
+# Angular Clean Architecture
+Project contains the architecture and best practices that need to be followed while working on an enterprise application.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+State Management - NgRx has been used.
+UI Components - Angular Material has been used.
 
-## Development server
+## Core
+- Core folder should contain singleton services shared throughout the app
+  Ex- : LoggerService, ErrorHandlerService
+- HTTP interceptors for auth/environment-specific headers
+- Core should be imported only by Root module
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Shared
+- Shared folder contain reusable components, pipes, directives
+- Shared will be imported many times by different feature modules
