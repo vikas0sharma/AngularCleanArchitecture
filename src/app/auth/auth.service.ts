@@ -15,7 +15,10 @@ export class AuthService {
     }
 
     login(credentials: LoginUser): Observable<UserResponse> {
-        return this.apiService.post<UserResponse, LoginUserRequest>('/users/login', { user: credentials });
+        return this.apiService.post<UserResponse, LoginUserRequest>('/login', {
+            email: credentials.email,
+            password: credentials.password
+        });
     }
 
 

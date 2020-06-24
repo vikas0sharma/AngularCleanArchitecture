@@ -2,12 +2,16 @@ import { User } from '../auth.interfaces';
 import { createReducer, on, Action } from '@ngrx/store';
 import * as AuthActions from './auth.actions'
 
-export interface AuthState {
+
+export interface Auth {
     isAuthenticated: boolean;
     user: User;
 }
+export interface AuthState {
+    readonly auth: Auth
+}
 
-const initialState: AuthState = {
+export const initialState: Auth = {
     isAuthenticated: false,
     user: null
 }
@@ -27,6 +31,6 @@ const reducer = createReducer(initialState,
     })
 );
 
-export function authReducer(state: AuthState | undefined, action: Action) {
-    reducer(state, action);
+export function authReducer(state: Auth | undefined, action: Action): Auth {
+    return reducer(state, action);
 }
