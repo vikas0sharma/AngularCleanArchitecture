@@ -3,9 +3,11 @@ import { createReducer, on, Action } from '@ngrx/store';
 import * as AuthActions from './auth.actions'
 
 
+
 export interface Auth {
     isAuthenticated: boolean;
     user: User;
+    errorMessage: string;
 }
 export interface AuthState {
     readonly auth: Auth
@@ -13,7 +15,8 @@ export interface AuthState {
 
 export const initialState: Auth = {
     isAuthenticated: false,
-    user: null
+    user: null,
+    errorMessage: ''
 }
 
 const reducer = createReducer(initialState,
@@ -27,6 +30,14 @@ const reducer = createReducer(initialState,
             ...state,
             isAuthenticated: true,
             user: action.user
+        }
+    }),
+    on(AuthActions.loginFail, (state, action) => {
+        return {
+            ...state,
+            isAuthenticated: false,
+            user: null,
+            errorMessage: action.error
         }
     })
 );
