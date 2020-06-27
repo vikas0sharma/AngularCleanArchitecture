@@ -1,13 +1,112 @@
-.example-container{
-    text-align: center;
+.field-width {
+    width: 100%;
+}
+.form-tab {
+margin-top: 20%
 }
 
-.form-container {
-    width: 400px; 
-    margin: 0px auto; 
-    margin-top: 200px;
+.form-v7-content  {
+    width: 910px;
+    margin-left: auto; 
+    margin-right: auto;
+	//font-family: 'Open Sans', sans-serif;
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+}
+.form-v7-content .form-left {
+	position: relative;
+	color: #fff;
+	font-weight: 400;
+    width: 92.5%;
+    margin-top: 32px;
+}
+.form-v7-content .form-left img {
+	width: 100%;
 }
 
-.form-field{
-    display: block
+.form-v7-content .form-left .text-1,
+.form-v7-content .form-left .text-2 {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+.form-v7-content .form-left .text-1 {
+	font-size: 38px;
+	top: 1.5%;
+}
+.form-v7-content .form-left .text-2 {
+	font-size: 16px;
+	bottom: 11%;
+}
+.form-v7-content .form-left .text-2::after {
+	position: absolute;
+	content: "";
+	background: #fff;
+	height: 1px;
+	width: 228px;
+	bottom: -50%;
+	left: 50%;
+	transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	opacity: 0.5;
+}
+.form-v7-content .form-detail {
+    padding: 73px 80px 41px;
+	position: relative;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-o-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.form-v7-content .form-detail .form-row-last {
+    margin-top: 35px;
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+	.form-v7-content {
+		margin: 180px 20px;
+		flex-direction:  column;
+		-o-flex-direction:  column;
+		-ms-flex-direction:  column;
+		-moz-flex-direction:  column;
+		-webkit-flex-direction:  column;
+	}
+	.form-v7-content .form-left {
+		width: 100%;
+		margin-bottom: -5px;
+	}
+	.form-v7-content .form-detail {
+		padding: 50px;
+	    width: auto;
+	}
+	.form-v7-content .form-detail .register {
+		margin-bottom: 80px;
+	}
+}
+@media screen and (max-width: 767px) {
+	
+}
+
+@media screen and (max-width: 575px) {
+	.form-v7-content .form-detail {
+		padding: 30px 20px;
+	    width: auto;
+	}
+	.form-v7-content .form-detail .register {
+		float: none;
+		margin-bottom: 10px;
+	}
+	.form-v7-content .form-detail .form-row-last p {
+	    margin-left: 0px;
+	    margin-bottom: 50px;
+	}
 }

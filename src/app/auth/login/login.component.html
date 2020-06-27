@@ -1,20 +1,57 @@
-
-<div class="example-container">
-    <div class="form-container">
-      <form [formGroup]="loginForm" (submit)="submit()">
-        <mat-form-field class="form-field" >
-          <mat-label> E-mail
-          </mat-label>
-          <input matInput formControlName="email" required>
-          
-        </mat-form-field>
-        <mat-form-field class="form-field">
-          <mat-label> Password
-          </mat-label>
-          <input matInput formControlName="password" type="password">
-          
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Log In</button>
-      </form>
+<div class="form-v7-content">
+    <div class="form-left">
+        <img src="../../../assets/images/login-img.jpg" alt="form">
+        <p class="text-1">Retrospective Pad</p>
+        <p class="text-2">Retrospective is an opportunity for the Scrum Team to inspect itself and create a plan for
+            improvements to be enacted during the next Sprint.</p>
     </div>
-  </div>
+    <div class="form-detail">
+        <mat-tab-group dynamicHeight color="accent">
+            <mat-tab label="Login">
+                <form [formGroup]="loginForm" class="form-tab" (submit)="submit()">
+                    <mat-form-field class="field-width">
+                        <mat-label>
+                            <mat-icon>email</mat-icon> Email
+                        </mat-label>
+                        <input formControlName="email" required email matInput placeholder="Enter email">
+                    </mat-form-field>
+                    <mat-form-field class="field-width">
+                        <mat-label>
+                            <mat-icon>vpn_key</mat-icon> Password
+                        </mat-label>
+                        <input formControlName="password" type="password" matInput required placeholder="Enter password">
+                    </mat-form-field>
+                    <div class="form-row-last">
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Sign Up">
+                <form class="form-tab" action="#" method="post" id="myform2">
+                    <mat-form-field class="field-width">
+                        <mat-label>
+                            <mat-icon>email</mat-icon> Email
+                        </mat-label>
+                        <input matInput placeholder="Enter email">
+                    </mat-form-field>
+                    <mat-form-field class="field-width">
+                        <mat-label>
+                            <mat-icon>vpn_key</mat-icon> Password
+                        </mat-label>
+                        <input matInput type="password" placeholder="Enter password">
+                    </mat-form-field>
+                    <mat-form-field class="field-width">
+                        <mat-label>
+                            <mat-icon>vpn_key</mat-icon> Confirm Password
+                        </mat-label>
+                        <input matInput type="password" placeholder="Enter password">
+                    </mat-form-field>
+                    <div class="form-row-last">
+                        <button mat-raised-button color="primary">Submit</button>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+</div>
