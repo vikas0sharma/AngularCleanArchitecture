@@ -29,7 +29,8 @@ const reducer = createReducer(initialState,
         return {
             ...state,
             isAuthenticated: true,
-            user: action.user
+            user: action.user,
+            errorMessage: ''
         }
     }),
     on(AuthActions.loginFail, (state, action) => {

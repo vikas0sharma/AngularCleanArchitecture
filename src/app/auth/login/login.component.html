@@ -20,6 +20,9 @@
                             <mat-icon>vpn_key</mat-icon> Password
                         </mat-label>
                         <input formControlName="password" type="password" matInput required placeholder="Enter password">
+                        <mat-hint *ngIf ="error$ | async as error" >
+                            {{error}}
+                        </mat-hint>
                     </mat-form-field>
                     <div class="form-row-last">
                         <button type="submit" mat-raised-button color="primary">Login</button>

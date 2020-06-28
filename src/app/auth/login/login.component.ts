@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AuthState } from '../state/auth.reducer';
 
 import * as fromAuthActions from '../state/auth.actions';
+import { authQuery } from '../state/auth.selectors';
 
 @Component({
     selector: 'app-login',
@@ -13,6 +14,9 @@ import * as fromAuthActions from '../state/auth.actions';
 export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
+    error$ = this.store.select(authQuery.getAuthError);
+
+
     constructor(private fb: FormBuilder,
         private store: Store<AuthState>) { }
 
